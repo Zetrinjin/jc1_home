@@ -1,0 +1,30 @@
+package part4;
+
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class Task29 {
+    public static void main(String[] args) {
+
+        String str;
+        int count=0;
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("введите строку: ");
+        str = scan.nextLine();
+        StringBuilder word = new StringBuilder();
+
+        //не считывает слова типа hi123
+        Pattern p = Pattern.compile("[a-zA-z]\\b");
+        Matcher m = p.matcher(str);
+
+        //String[] words = str.split("\\s+");
+
+
+        while(m.find()){
+            System.out.print(m.group());
+        }
+
+    }
+}
