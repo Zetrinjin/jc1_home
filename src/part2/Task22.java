@@ -20,7 +20,8 @@ public class Task22 {
 
         System.out.println("min index: " + indexMin);
         System.out.println("max index: " + indexMax);
-        for(int j=arg[indexMin];j<arg[indexMax-1];j++){//todo
+        for(int j=indexMin+1;j<indexMax;j++){//todo
+           // System.out.println(j);
             sum+=arg[j];
         }
 

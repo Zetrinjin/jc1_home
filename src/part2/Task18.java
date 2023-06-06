@@ -7,12 +7,20 @@ public class Task18 {
     public static void main(String[] args) {
 
         int num = 20023143;
+        String accountNum = "";
+        int count = 0;
 
-        DecimalFormatSymbols symbol= new DecimalFormatSymbols();//создаем объект
-        symbol.setGroupingSeparator(' ');//указываем разделитель
-        DecimalFormat df = new DecimalFormat("#,###",symbol);//еще один объект
-        String number = df.format(num);//для стрингов
+        while (num > 0) {
+            int digit = num % 10;
+            accountNum = digit + accountNum;
+            num = num / 10;
+            count++;
+            if (count % 3 == 0 && num != 0) {
+                accountNum = " " + accountNum;
+            }
+        }
+        System.out.println(accountNum);
 
-        System.out.println(number);
+
     }
 }
